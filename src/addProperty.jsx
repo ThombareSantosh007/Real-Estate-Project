@@ -22,7 +22,7 @@ const AddProperty = () => {
       navigate('/');
       return;
     }
-    document.title = "🏠 MahaVastu | Add Property";
+    document.title = " | Add Property";
   }, [currentUser, navigate]);
   
   const [formData, setFormData] = useState({
