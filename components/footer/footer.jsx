@@ -1,294 +1,181 @@
-import { Button, Input, Textarea, useToast } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import { scrollToTop } from "../../constants/scrollToTop";
+import { Link } from 'react-router-dom';
+import { 
+  Home, 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Facebook, 
+  Twitter, 
+  Instagram, 
+  Linkedin,
+  Clock,
+  Award
+} from 'lucide-react';
 
 const Footer = () => {
-  const toast = useToast();
-  const [btnLoader, setBtnLoader] = useState(false);
-
-  const showToast = () => {
-    toast({
-      title: "Message Sent",
-      status: "success",
-      duration: 2000,
-      isClosable: true,
-      position: "top",
-      containerStyle: {
-        zIndex: 9999,
-      },
-    });
-  };
-  const errorToast = (res, status) => {
-    toast({
-      title: res,
-      status: status,
-      duration: 2000,
-      isClosable: true,
-      position: "top",
-      containerStyle: {
-        zIndex: 9999,
-      },
-    });
-  };
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phoneNo: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    const errors = validateForm(formData);
-
-    if (errors === false) {
-      setBtnLoader(true);
-      axios
-        .post("https://mahavastu-api.vercel.app/contact", formData)
-        .then((response) => {
-          showToast();
-          setFormData({
-            firstName: "",
-            lastName: "",
-            phoneNo: "",
-            email: "",
-            message: "",
-          });
-          setBtnLoader(false);
-        })
-        .catch((error) => {
-          setBtnLoader(false);
-          errorToast(error.message, "error");
-          console.error("Error submitting form:", error);
-        });
-    }
-  };
-
-  const isValidEmail = (email) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
-
-  const validateForm = (data) => {
-    let _error;
-    if (
-      data.firstName &&
-      data.firstName.trim() &&
-      data.lastName &&
-      data.lastName.trim() &&
-      data.email &&
-      data.email.trim() &&
-      isValidEmail(data.email.trim()) &&
-      data.phoneNo &&
-      data.phoneNo.trim() &&
-      data.message &&
-      data.message.trim()
-    ) {
-      _error = false;
-    } else {
-      if (
-        !data.firstName &&
-        !data.firstName.trim() &&
-        !data.lastName &&
-        !data.lastName.trim() &&
-        !data.email &&
-        !data.email.trim() &&
-        !isValidEmail(data.email.trim()) &&
-        !data.phoneNo &&
-        !data.phoneNo.trim() &&
-        !data.message &&
-        !data.message.trim()
-      ) {
-        errorToast("Fill the fields first!", "error");
-      } else if (!data.firstName || !data.firstName.trim()) {
-        errorToast("Enter the firstName!", "error");
-      } else if (!data.lastName || !data.lastName.trim()) {
-        errorToast("Enter the lastName!", "error");
-      } else if (!data.email || !data.email.trim()) {
-        errorToast("Enter the email!", "error");
-      } else if (!isValidEmail(data.email.trim())) {
-        errorToast("Enter the valid  email!", "error");
-      } else if (!data.phoneNo || !data.phoneNo.trim()) {
-        errorToast("Enter the phone no!", "error");
-      } else if (!data.message || !data.message.trim()) {
-        errorToast("Enter the message!", "error");
-      }
-    }
-    return _error;
-  };
-
-  // You can add more validations based on your requirements
+  const currentYear = new Date().getFullYear();
 
   return (
-    <div className="bg-black">
-      <footer
-        style={{ maxWidth: 1200 }}
-        className="mx-auto flex justify-between gap-20 max-lg:flex-col py-20 px-8 max-sm:px-5  "
-      >
-        <div className="flex flex-col items-start h-auto justify-between gap-16 w-2/4 max-lg:w-full pr-10 max-sm:pr-0">
-          <div className="flex flex-col text-lg items-start  justify-between gap-10 ">
-            <a href="/">
-              <img src="/MahaVastu-logo-dark.svg" className="w-44" alt="MahaVastu-logo" />
-            </a>
-            <p style={{ color: "#696969" }}>
-              MahaVastu connects buyers with exceptional properties across Maharashtra. From Mumbai's luxury apartments to Pune's modern homes, we showcase the best real estate options for your needs.
-            </p>
-            <div className="flex text-xl justify-start items-center gap-10 text-red-500">
-              <Link target="_blank" to={"https://facebook.com"}>
-                <FaFacebookF />
-              </Link>
-              <Link target="_blank" to={"https://instagram.com"}>
-                <FaInstagram />
-              </Link>
-              <Link target="_blank" to={"https://twitter.com"}>
-                <FaTwitter />
-              </Link>
+    <footer className="bg-gray-900 text-gray-300">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div>
+            <div className="flex items-center mb-4">
+              <Home className="h-8 w-8 text-blue-500" />
+              <span className="ml-2 text-2xl font-bold text-white">Mahavastu</span>
             </div>
-            <ul className="text-white text-lg flex justify-start items-center flex-wrap gap-x-8 gap-y-4">
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/"
-              >
-                Home
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/services"
-              >
-                Services
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/about"
-              >
-                About Us
-              </Link>
-              <Link
-                onClick={scrollToTop}
-                className="hover:text-red-500 transition-all"
-                to="/contact"
-              >
-                Contact Us
-              </Link>
+            <p className="text-gray-400 mb-4">
+              Your trusted partner in finding the perfect property. We provide comprehensive real estate solutions with a focus on Vastu principles.
+            </p>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com" className="hover:text-blue-500 transition-colors">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://twitter.com" className="hover:text-blue-500 transition-colors">
+                <Twitter className="h-5 w-5" />
+              </a>
+              <a href="https://instagram.com" className="hover:text-blue-500 transition-colors">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="https://linkedin.com" className="hover:text-blue-500 transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/properties" className="hover:text-blue-500 transition-colors">
+                  Properties
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="hover:text-blue-500 transition-colors">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/vastu-consultation" className="hover:text-blue-500 transition-colors">
+                  Vastu Consultation
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-blue-500 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-blue-500 transition-colors">
+                  Blog & News
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:text-blue-500 transition-colors">
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
-          <p style={{ color: "#696969" }}>© MahaVastu. All Rights Reserved 2025.</p>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <MapPin className="h-5 w-5 text-blue-500 mt-1 mr-2" />
+                <span>123 Vastu Marg, Sector 42<br />New Delhi, 110001</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-5 w-5 text-blue-500 mr-2" />
+                <a href="tel:+911234567890" className="hover:text-blue-500 transition-colors">
+                  +91 123 456 7890
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Mail className="h-5 w-5 text-blue-500 mr-2" />
+                <a href="mailto:info@mahavastu.com" className="hover:text-blue-500 transition-colors">
+                  info@mahavastu.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Clock className="h-5 w-5 text-blue-500 mr-2" />
+                <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-white text-lg font-semibold mb-4">Newsletter</h3>
+            <p className="text-gray-400 mb-4">
+              Subscribe to our newsletter for the latest property updates and Vastu tips.
+            </p>
+            <form className="space-y-2">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500"
+              />
+              <button
+                type="submit"
+                className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
         </div>
 
-        <div
-          id="contact"
-          className="w-2/4 max-lg:w-full flex flex-col h-auto justify-between items-start gap-10 "
-        >
-          <h1 className="text-3xl text-white">Get in Touch</h1>
-          <div className="name w-full gap-8 text-white max-sm:flex-col max-sm:gap-10 mt-3 flex">
-            <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="First Name"
-              name="firstName"
-              maxLength={20}
-              value={formData.firstName}
-              onChange={handleChange}
-              autoComplete="off"
-            />
-            <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="Last Name"
-              name="lastName"
-              maxLength={20}
-              value={formData.lastName}
-              onChange={handleChange}
-              autoComplete="off"
-            />
+        {/* Awards Section */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center mb-4 md:mb-0">
+              <Award className="h-6 w-6 text-blue-500 mr-2" />
+              <span className="text-white font-semibold">Award Winning Real Estate Company</span>
+            </div>
+            <div className="flex space-x-4">
+              <img 
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                alt="Real Estate Award" 
+                className="h-12 w-auto"
+              />
+              <img 
+                src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                alt="Best Property Consultant" 
+                className="h-12 w-auto"
+              />
+            </div>
           </div>
-          <div className="contact w-full text-white gap-8 max-sm:flex-col max-sm:gap-10  flex">
-            <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              placeholder="Email Address"
-              name="email"
-              maxLength={40}
-              value={formData.email}
-              onChange={handleChange}
-              autoComplete="off"
-            />
-            <Input
-              pl={3}
-              fontSize={19}
-              variant={"flushed"}
-              borderColor={"#696969"}
-              focusBorderColor="white"
-              _placeholder={{ color: "#696969" }}
-              type="number"
-              placeholder="Phone No"
-              name="phoneNo"
-              value={formData.phoneNo}
-              onChange={handleChange}
-              autoComplete="off"
-              max={15}
-              maxLength={15}
-            />
-          </div>
-          <Textarea
-            pl={3}
-            fontSize={19}
-            variant={"flushed"}
-            borderColor={"#696969"}
-            focusBorderColor="white"
-            _placeholder={{ color: "#696969" }}
-            placeholder="Message"
-            maxLength={200}
-            className="w-full text-white"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            autoComplete="off"
-          />
-          <Button
-            _hover={{ backgroundColor: "white", color: "#d5515e" }}
-            backgroundColor={"#d5515e"}
-            color={"white"}
-            borderColor={"#d5515e"}
-            variant={"outline"}
-            size={"lg"}
-            isLoading={btnLoader}
-            loadingText={"Sending.."}
-            onClick={handleSubmit}
-            className="mt-4  max-lg:w-72 max-sm:w-full"
-            transitionDuration={"300ms"}
-            fontWeight={"normal"}
-            fontSize={"20px"}
-            borderRadius={"4px"}
-          >
-            Submit
-          </Button>
         </div>
-      </footer>
-    </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-sm text-gray-400 mb-4 md:mb-0">
+              © {currentYear} Mahavastu. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <Link to="/privacy-policy" className="hover:text-blue-500 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-blue-500 transition-colors">
+                Terms of Service
+              </Link>
+              <Link to="/sitemap" className="hover:text-blue-500 transition-colors">
+                Sitemap
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 
