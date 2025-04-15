@@ -12,14 +12,14 @@ import ContactPage from "./components/contact-page-component/contact-page";
 import Results from "./results";
 import AddProperty from "./addProperty";
 import { CartProvider } from "./context/cartContext";
-import { AuthProvider } from "./context/authContext";
+import { AuthProvider, useAuth } from "./context/authContext";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import { useAuth } from "./context/authContext";
 import EmiCalculator from "./components/emi-calculator/EmiCalculator";
 import PropertyNews from "./components/property-news/PropertyNews";
 import PriceTrends from "./components/price-trends/PriceTrends";
 import HelpCenter from "./components/help-center/HelpCenter";
+import AdminDashboard from "./components/admin/AdminDashboard";
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -33,6 +33,18 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/" />;
   }
 
+  return children;
+};
+
+// Admin protected route
+const AdminRoute = ({ children }) => {
+  const { currentUser } = useAuth();
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
+  if (currentUser.role !== 'admin') {
+    return <Navigate to="/" />;
+  }
   return children;
 };
 
@@ -53,6 +65,14 @@ function App() {
                   <ProtectedRoute>
                     <AddProperty />
                   </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin"
+                element={
+                  <AdminRoute>
+                    <AdminDashboard />
+                  </AdminRoute>
                 }
               />
               <Route path="/about" element={<About />} />

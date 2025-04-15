@@ -17,8 +17,8 @@ const AddProperty = () => {
   const fileInputRef = useRef(null);
   
   useEffect(() => {
-    // Redirect if not seller or broker
-    if (!currentUser || (currentUser.role !== 'seller' && currentUser.role !== 'broker')) {
+    // Only allow sellers to access this page
+    if (!currentUser || currentUser.role !== 'seller') {
       navigate('/');
       return;
     }

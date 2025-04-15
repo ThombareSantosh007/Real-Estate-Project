@@ -19,12 +19,10 @@ const Register = () => {
       setError('Passwords do not match');
       return;
     }
-    
     if (password.length < 6) {
       setError('Password must be at least 6 characters');
       return;
     }
-    
     try {
       await register(email, password, name, phone, role);
       navigate('/');
@@ -46,7 +44,6 @@ const Register = () => {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && <div className="text-red-500 text-center bg-red-50 p-3 rounded-md">{error}</div>}
-          
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label htmlFor="name" className="sr-only">
@@ -162,20 +159,6 @@ const Register = () => {
                   Seller
                 </label>
               </div>
-              <div className="flex items-center">
-                <input
-                  id="role-broker"
-                  name="role"
-                  type="radio"
-                  value="broker"
-                  checked={role === 'broker'}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300"
-                />
-                <label htmlFor="role-broker" className="ml-2 block text-sm text-gray-700">
-                  Broker
-                </label>
-              </div>
             </div>
           </div>
 
@@ -187,7 +170,6 @@ const Register = () => {
               Register
             </button>
           </div>
-          
           <div className="text-center text-sm">
             Already have an account?{' '}
             <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">

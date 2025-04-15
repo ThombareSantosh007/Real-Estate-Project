@@ -252,33 +252,28 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="bg-gray-950 border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-              <div className="text-gray-400 text-sm text-center lg:text-left">
-                {currentYear} Mahavastu. All rights reserved.
-              </div>
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-                <Link to="/privacy-policy" className="hover:text-blue-500 transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link to="/terms" className="hover:text-blue-500 transition-colors">
-                  Terms of Service
-                </Link>
-                <Link to="/disclaimer" className="hover:text-blue-500 transition-colors">
-                  Disclaimer
-                </Link>
-                <Link to="/refund-policy" className="hover:text-blue-500 transition-colors">
-                  Refund Policy
-                </Link>
-                <Link to="/sitemap" className="hover:text-blue-500 transition-colors">
-                  Sitemap
-                </Link>
-              </div>
-            </div>
-          </div>
+      </div>
+      {/* Bottom Bar - Full Width, Touches Bottom */}
+      <div className="w-full bg-gray-950 border-t border-gray-800 flex flex-col lg:flex-row justify-between items-center gap-4 py-4 px-4">
+        <div className="text-gray-400 text-sm text-center lg:text-left">
+          {currentYear} Mahavastu. All rights reserved.
+        </div>
+        <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+          <Link to="/privacy-policy" className="hover:text-blue-500 transition-colors">
+            Privacy Policy
+          </Link>
+          <Link to="/terms" className="hover:text-blue-500 transition-colors">
+            Terms of Service
+          </Link>
+          <Link to="/disclaimer" className="hover:text-blue-500 transition-colors">
+            Disclaimer
+          </Link>
+          <Link to="/refund-policy" className="hover:text-blue-500 transition-colors">
+            Refund Policy
+          </Link>
+          <Link to="/sitemap" className="hover:text-blue-500 transition-colors">
+            Sitemap
+          </Link>
         </div>
       </div>
     </footer>
