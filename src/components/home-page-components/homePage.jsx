@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import properties from '../../data/properties.json';
 
 const HomePage = () => {
   return (
@@ -40,76 +41,33 @@ const HomePage = () => {
             Featured Properties
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-            Handpicked properties that stand out for their quality, location, and value.
+            Discover premium properties in Maharashtra's most sought-after locations.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {/* Property Card 1 */}
-          <div className="rounded-lg shadow-lg overflow-hidden">
-            <img
-              className="w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              alt="Modern house"
-            />
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900">Luxury Villa</h3>
-              <p className="text-gray-600">123 Main St, Anytown</p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-indigo-600 font-bold">$1,250,000</span>
-                <Link
-                  to="/products/1"
-                  className="text-indigo-600 hover:text-indigo-900"
-                >
-                  View Details
-                </Link>
+          {properties.map(property => (
+            <div key={property.id} className="rounded-lg shadow-lg overflow-hidden">
+              <img
+                className="w-full h-48 object-cover"
+                src={property.image}
+                alt={property.title}
+              />
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900">{property.title}</h3>
+                <p className="text-gray-600">{property.location}</p>
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-indigo-600 font-bold">{property.price}</span>
+                  <Link
+                    to={`/products/${property.id}`}
+                    className="text-indigo-600 hover:text-indigo-900"
+                  >
+                    View Details
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Property Card 2 */}
-          <div className="rounded-lg shadow-lg overflow-hidden">
-            <img
-              className="w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              alt="Modern apartment"
-            />
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900">Modern Apartment</h3>
-              <p className="text-gray-600">456 Park Ave, Anytown</p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-indigo-600 font-bold">$450,000</span>
-                <Link
-                  to="/products/2"
-                  className="text-indigo-600 hover:text-indigo-900"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Property Card 3 */}
-          <div className="rounded-lg shadow-lg overflow-hidden">
-            <img
-              className="w-full h-48 object-cover"
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-              alt="Family home"
-            />
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-900">Family Home</h3>
-              <p className="text-gray-600">789 Oak St, Anytown</p>
-              <div className="mt-4 flex justify-between items-center">
-                <span className="text-indigo-600 font-bold">$750,000</span>
-                <Link
-                  to="/products/3"
-                  className="text-indigo-600 hover:text-indigo-900"
-                >
-                  View Details
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <div className="mt-10 text-center">
@@ -125,4 +83,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage; 
+export default HomePage;

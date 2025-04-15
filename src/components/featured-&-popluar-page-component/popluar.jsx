@@ -2,73 +2,73 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Popular = () => {
-  // Sample popular properties data
+  // Sample popular properties data for Maharashtra
   const popularProperties = [
     {
       id: 7,
-      title: 'Urban Loft',
-      address: '222 Downtown Ave, Anytown',
-      price: '$520,000',
+      title: 'Luxury Apartment in Bandra',
+      address: 'Bandra West, Mumbai, Maharashtra',
+      price: '₹5,75,00,000',
       image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
-      beds: 1,
-      baths: 2,
-      sqft: 1100,
-      views: 1250
+      beds: 3,
+      baths: 3,
+      sqft: 1800,
+      views: 2150
     },
     {
       id: 8,
-      title: 'Suburban Retreat',
-      address: '333 Maple Dr, Anytown',
-      price: '$680,000',
+      title: 'Garden View Apartment in Kothrud',
+      address: 'Kothrud, Pune, Maharashtra',
+      price: '₹1,45,00,000',
       image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1084&q=80',
       beds: 3,
       baths: 2,
-      sqft: 2200,
-      views: 980
+      sqft: 1500,
+      views: 1680
     },
     {
       id: 9,
-      title: 'Mountain Cabin',
-      address: '444 Forest Rd, Anytown',
-      price: '$420,000',
+      title: 'Hill View Villa in Panchgani',
+      address: 'Panchgani, Maharashtra',
+      price: '₹2,85,00,000',
       image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 2,
-      baths: 1,
-      sqft: 1500,
-      views: 875
+      beds: 3,
+      baths: 3,
+      sqft: 2200,
+      views: 1875
     },
     {
       id: 10,
-      title: 'Beachfront Cottage',
-      address: '555 Ocean Blvd, Anytown',
-      price: '$950,000',
+      title: 'Beachfront Property in Alibaug',
+      address: 'Alibaug, Maharashtra',
+      price: '₹6,50,00,000',
       image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 3,
-      baths: 2,
-      sqft: 1800,
-      views: 1450
+      beds: 4,
+      baths: 4,
+      sqft: 3500,
+      views: 2450
     },
     {
       id: 11,
-      title: 'Historic Townhouse',
-      address: '666 Heritage St, Anytown',
-      price: '$780,000',
+      title: 'Heritage Bungalow in Kolhapur',
+      address: 'Kolhapur, Maharashtra',
+      price: '₹1,95,00,000',
       image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       beds: 4,
       baths: 3,
-      sqft: 2600,
-      views: 1120
+      sqft: 2800,
+      views: 1920
     },
     {
       id: 12,
-      title: 'Modern Eco Home',
-      address: '777 Green Way, Anytown',
-      price: '$1,100,000',
+      title: 'Eco-Friendly Villa in Nashik',
+      address: 'Nashik, Maharashtra',
+      price: '₹2,25,00,000',
       image: 'https://images.unsplash.com/photo-1600047508788-26bb381500e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 4,
+      beds: 3,
       baths: 3,
-      sqft: 3000,
-      views: 1680
+      sqft: 2400,
+      views: 1780
     }
   ];
 
@@ -125,4 +125,4 @@ const Popular = () => {
   );
 };
 
-export default Popular; 
+export default Popular;

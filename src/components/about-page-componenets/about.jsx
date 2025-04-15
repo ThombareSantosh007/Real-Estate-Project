@@ -64,45 +64,45 @@ const About = () => {
                 <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
                     alt="Team member"
                   />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-gray-900">John Smith</h3>
-                <p className="text-sm text-gray-500">CEO & Founder</p>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">Santosh Thombare</h3>
+                <p className="text-sm text-gray-500">Team Member</p>
               </div>
               <div className="text-center">
                 <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
                     alt="Team member"
                   />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-gray-900">Sarah Johnson</h3>
-                <p className="text-sm text-gray-500">Head of Sales</p>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">Gayatri Zirmute</h3>
+                <p className="text-sm text-gray-500">Team Member</p>
               </div>
               <div className="text-center">
                 <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
-                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
                     alt="Team member"
                   />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-gray-900">Michael Brown</h3>
-                <p className="text-sm text-gray-500">Lead Property Consultant</p>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">Chaitanya Deore</h3>
+                <p className="text-sm text-gray-500">Team Member</p>
               </div>
               <div className="text-center">
                 <div className="relative h-48 w-48 mx-auto rounded-full overflow-hidden">
                   <img
                     className="w-full h-full object-cover"
-                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                    src="https://randomuser.me/api/portraits/women/47.jpg"
                     alt="Team member"
                   />
                 </div>
-                <h3 className="mt-4 text-lg font-medium text-gray-900">Emily Davis</h3>
-                <p className="text-sm text-gray-500">Customer Relations Manager</p>
+                <h3 className="mt-4 text-lg font-medium text-gray-900">Sayli Jadhav</h3>
+                <p className="text-sm text-gray-500">Team Member</p>
               </div>
             </div>
           </div>

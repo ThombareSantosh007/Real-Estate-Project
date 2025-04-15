@@ -16,6 +16,10 @@ import { AuthProvider } from "./context/authContext";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import { useAuth } from "./context/authContext";
+import EmiCalculator from "./components/emi-calculator/EmiCalculator";
+import PropertyNews from "./components/property-news/PropertyNews";
+import PriceTrends from "./components/price-trends/PriceTrends";
+import HelpCenter from "./components/help-center/HelpCenter";
 
 // Protected route component
 const ProtectedRoute = ({ children }) => {
@@ -58,6 +62,10 @@ function App() {
               <Route path="/products/:id" element={<Products />} />
               <Route path="/projects/:id" element={<AboutProject />} />
               <Route path="/search" element={<Results />} />
+              <Route path="/emi-calculator" element={<EmiCalculator />} />
+              <Route path="/property-news" element={<PropertyNews />} />
+              <Route path="/price-trends" element={<PriceTrends />} />
+              <Route path="/help-center" element={<HelpCenter />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </div>

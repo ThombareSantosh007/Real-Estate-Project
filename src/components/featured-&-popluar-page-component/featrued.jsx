@@ -2,23 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Featured = () => {
-  // Sample featured properties data
+  // Sample featured properties data for Maharashtra
   const featuredProperties = [
     {
       id: 1,
-      title: 'Luxury Villa',
-      address: '123 Main St, Anytown',
-      price: '$1,250,000',
+      title: 'Premium Apartment in Hiranandani Gardens',
+      address: 'Powai, Mumbai, Maharashtra',
+      price: '₹2,85,00,000',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 5,
-      baths: 4,
-      sqft: 3500
+      beds: 3,
+      baths: 3,
+      sqft: 1850
     },
     {
       id: 2,
-      title: 'Modern Apartment',
-      address: '456 Park Ave, Anytown',
-      price: '$450,000',
+      title: 'Modern Flat in Koregaon Park',
+      address: 'Koregaon Park, Pune, Maharashtra',
+      price: '₹1,25,00,000',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       beds: 2,
       baths: 2,
@@ -26,43 +26,43 @@ const Featured = () => {
     },
     {
       id: 3,
-      title: 'Family Home',
-      address: '789 Oak St, Anytown',
-      price: '$750,000',
+      title: 'Luxury Villa in Lonavala',
+      address: 'Lonavala, Maharashtra',
+      price: '₹4,50,00,000',
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
       beds: 4,
-      baths: 3,
-      sqft: 2800
+      baths: 4,
+      sqft: 3200
     },
     {
       id: 4,
-      title: 'Waterfront Property',
-      address: '101 Lake View Dr, Anytown',
-      price: '$1,850,000',
+      title: 'Seafront Apartment in Worli',
+      address: 'Worli, Mumbai, Maharashtra',
+      price: '₹7,50,00,000',
       image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 6,
-      baths: 5,
-      sqft: 4200
+      beds: 4,
+      baths: 4,
+      sqft: 2800
     },
     {
       id: 5,
-      title: 'Downtown Condo',
-      address: '555 Center St, Anytown',
-      price: '$380,000',
+      title: 'Premium Flat in Viman Nagar',
+      address: 'Viman Nagar, Pune, Maharashtra',
+      price: '₹95,00,000',
       image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
-      beds: 1,
-      baths: 1,
-      sqft: 950
+      beds: 2,
+      baths: 2,
+      sqft: 1100
     },
     {
       id: 6,
-      title: 'Country Estate',
-      address: '777 Rural Route, Anytown',
-      price: '$2,100,000',
+      title: 'Luxury Bungalow in Nagpur',
+      address: 'Civil Lines, Nagpur, Maharashtra',
+      price: '₹3,25,00,000',
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80',
-      beds: 7,
-      baths: 6,
-      sqft: 5500
+      beds: 5,
+      baths: 5,
+      sqft: 4500
     }
   ];
 
@@ -114,4 +114,4 @@ const Featured = () => {
   );
 };
 
-export default Featured; 
+export default Featured;
